@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <p>闭包的本质：函数在执行的时候会放到一个执行栈上当函数执行完毕之后会从执行栈上移除，但是堆上的作用域成员因为被外部引用不能释放，因此内部函数依然可以访问外部函数的成员</p>
+  <script type="text/javascript">
+    function makeSalary(base) {
+      return function(performance) {
+        console.log(base + performance)
+      }
+    }
+
+    var level1 = makeSalary(12000)
+    var level2 = makeSalary(15000)
+
+    level1(2000)
+    level1(2500)
+    level2(3000)
+  </script>
+</body>
+</html>

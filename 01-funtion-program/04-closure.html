@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <p>闭包 (Closure)：函数和其周围的状态(词法环境)的引用捆绑在一起形成闭包。</p>
+  <p>可以在另一个作用域中调用一个函数的内部函数并访问到该函数的作用域中的成员</p>
+  <script type="text/javascript">
+    function makePower(power) {
+      return function (number) {
+        return Math.pow(number,power)
+      }
+    }
+
+    debugger
+
+    let power2 = makePower(2)
+    let power3 = makePower(3)
+
+    console.log(power2(4))
+    console.log(power2(6))
+    console.log(power3(9))
+
+  </script>
+</body>
+</html>
